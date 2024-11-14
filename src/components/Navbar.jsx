@@ -1,13 +1,33 @@
+/* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavClick = (path) => {
+    navigate(path);
+    const element = document.getElementById(path.slice(1));
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
 
   return (
-    <nav className="bg-black text-white px-5 py-3">
+    <nav className="bg-black text-white px-5 py-3 fixed w-full top-0 z-50">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
-          <div className="text-xl font-bold">Natway Holdings</div>
+          <Link to="/" className="text-xl font-bold">Natway Holdings</Link>
+          {/* Desktop menu */}
+          <ul className="hidden md:flex gap-4">
+            <li><button onClick={() => handleNavClick('/services')} className="hover:text-gray-300 transition-colors">Services</button></li>
+            <li><button onClick={() => handleNavClick('/solutions')} className="hover:text-gray-300 transition-colors">Digital Solutions</button></li>
+            <li><button onClick={() => handleNavClick('/industry')} className="hover:text-gray-300 transition-colors">Your Industry</button></li>
+            <li><button onClick={() => handleNavClick('/about')} className="hover:text-gray-300 transition-colors">About Us</button></li>
+            <li><button onClick={() => handleNavClick('/contact')} className="hover:text-gray-300 transition-colors">Contact Us</button></li>
+          </ul>
           {/* Mobile menu button */}
           <button
             type="button"
@@ -22,25 +42,16 @@ const Navbar = () => {
               )}
             </svg>
           </button>
-
-          {/* Desktop menu */}
-          <ul className="hidden md:flex gap-4">
-            <li><a href="#services" className="hover:text-gray-300 transition-colors">Services</a></li>
-            <li><a href="#solutions" className="hover:text-gray-300 transition-colors">Digital Solutions</a></li>
-            <li><a href="#industry" className="hover:text-gray-300 transition-colors">Your Industry</a></li>
-            <li><a href="#about" className="hover:text-gray-300 transition-colors">About Us</a></li>
-            <li><a href="#contact" className="hover:text-gray-300 transition-colors">Contact Us</a></li>
-          </ul>
         </div>
 
         {/* Mobile menu */}
         {isMenuOpen && (
           <ul className="md:hidden pt-4 space-y-2">
-            <li><a href="#services" className="block py-2 hover:text-gray-300 transition-colors">Services</a></li>
-            <li><a href="#solutions" className="block py-2 hover:text-gray-300 transition-colors">Digital Solutions</a></li>
-            <li><a href="#industry" className="block py-2 hover:text-gray-300 transition-colors">Your Industry</a></li>
-            <li><a href="#about" className="block py-2 hover:text-gray-300 transition-colors">About Us</a></li>
-            <li><a href="#contact" className="block py-2 hover:text-gray-300 transition-colors">Contact Us</a></li>
+            <li><button onClick={() => handleNavClick('/services')} className="block py-2 hover:text-gray-300 transition-colors">Services</button></li>
+            <li><button onClick={() => handleNavClick('/solutions')} className="block py-2 hover:text-gray-300 transition-colors">Digital Solutions</button></li>
+            <li><button onClick={() => handleNavClick('/industry')} className="block py-2 hover:text-gray-300 transition-colors">Your Industry</button></li>
+            <li><button onClick={() => handleNavClick('/about')} className="block py-2 hover:text-gray-300 transition-colors">About Us</button></li>
+            <li><button onClick={() => handleNavClick('/contact')} className="block py-2 hover:text-gray-300 transition-colors">Contact Us</button></li>
           </ul>
         )}
       </div>

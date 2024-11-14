@@ -51,19 +51,19 @@ const Contact = () => (
             <div>
               <h4 className="font-semibold mb-2">Headquarters</h4>
               <p className="text-gray-600">
-                123 Business Street
+                Nakawa Business Park
                 <br />
-                New York, NY 10001
+                Kampala, Nakawa
                 <br />
-                United States
+                Uganda
               </p>
             </div>
             <div>
               <h4 className="font-semibold mb-2">Contact Information</h4>
               <p className="text-gray-600">
-                Phone: (555) 123-4567
+                Phone: +256 704 444 444
                 <br />
-                Email: contact@natway.com
+                Email: info@natway.com
               </p>
             </div>
           </div>

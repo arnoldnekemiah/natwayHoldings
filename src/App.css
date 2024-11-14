@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.hero {
+  background-image: url('hero-image.jpg');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.solutions {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.solution-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.solution-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 200px;
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}

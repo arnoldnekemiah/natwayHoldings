@@ -22,10 +22,10 @@ const Footer = () => (
         <div>
           <h4 className="text-lg font-semibold mb-4">Contact</h4>
           <ul className="space-y-2 text-gray-300">
-            <li>123 Business Street</li>
-            <li>New York, NY 10001</li>
-            <li>Phone: (555) 123-4567</li>
-            <li>Email: contact@natway.com</li>
+            <li>Nakawa Business Park</li>
+            <li>Kampala, Nakawa</li>
+            <li>Phone: +256 704 444 444</li>
+            <li>Email: info@natway.com</li>
           </ul>
         </div>
         <div>
